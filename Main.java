@@ -8,10 +8,13 @@ public class Main {
     }
 
     public static void main(String[] args) {
+        System.out.println();
         log("** Normal scenario **");
         normalScenario();
+        System.out.println();
         log("** Transaction rollback scenario **");
         rollbackScenario();
+        System.out.println();
         log("** Blocking scenario **");
         blockingTimeoutScenario();
     }
