@@ -72,7 +72,7 @@ public class Main {
     public static void blockingTimeoutScenario() {
         // Deployment
         List<Participant> participants = new ArrayList<>();
-        participants.add(new PersistentService(10000l));
+        participants.add(new PersistentService(5000l));
         participants.add(new NotificationService());
         MainService mainService = new MainService(participants);
         
