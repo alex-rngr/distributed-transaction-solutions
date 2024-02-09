@@ -78,7 +78,7 @@ public class Main {
         log("Sending commit request");
 
         try {
-            boolean allAgree = mainService.sendRequest();
+            mainService.sendRequest();
         } catch(CompletionException e) {
             /*
              * One way of handling a blocking request is by 
