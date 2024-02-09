@@ -25,7 +25,9 @@ public class MainService {
                 .map(participants -> participants.commit().orTimeout(TIME_OUT, TimeUnit.MILLISECONDS))
                 .collect(Collectors.toList());
 
-        commitFutures.stream().map(CompletableFuture::join);
+        for (CompletableFuture<Void> completableFuture : commitFutures) {
+            completableFuture.join();
+        }    
     }
 
     public void sendAbort() {
@@ -33,7 +35,9 @@ public class MainService {
                 .map(participants -> participants.abort().orTimeout(TIME_OUT, TimeUnit.MILLISECONDS))
                 .collect(Collectors.toList());
 
-        abortFutures.stream().map(CompletableFuture::join);
+        for (CompletableFuture<Void> completableFuture : abortFutures) {
+            completableFuture.join();
+        }
     }
 
     public void shutdownAll() {

@@ -10,9 +10,9 @@ public class Main {
     public static void main(String[] args) {
         log("** Normal scenario **");
         normalScenario();
-        log("** Transaction rollback scenario **");
+        log("\n** Transaction rollback scenario **");
         rollbackScenario();
-        log("** Blocking scenario **");
+        log("\n** Blocking scenario **");
         blockingTimeoutScenario();
     }
     
@@ -69,7 +69,7 @@ public class Main {
     public static void blockingTimeoutScenario() {
         // Deployment
         List<Participant> participants = new ArrayList<>();
-        participants.add(new PersistentService(10000l));
+        participants.add(new PersistentService(5000l));
         participants.add(new NotificationService());
         MainService mainService = new MainService(participants);
         
