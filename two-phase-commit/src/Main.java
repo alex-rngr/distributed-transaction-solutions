@@ -8,14 +8,11 @@ public class Main {
     }
 
     public static void main(String[] args) {
-        System.out.println();
-        log("** Normal scenario **");
+        System.out.println("***** NORMAL SCENARIO *****");
         normalScenario();
-        System.out.println();
-        log("** Transaction rollback scenario **");
+        System.out.println("\n***** ROLLBACK SCENARIO *****");
         rollbackScenario();
-        System.out.println();
-        log("** Blocking scenario **");
+        System.out.println("\n***** BLOCKING SCENARIO *****");
         blockingTimeoutScenario();
     }
     
